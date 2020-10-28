@@ -4,7 +4,8 @@ import axios from 'axios';
 const App = function () {
 	const [email, setEmail] = useState("");
 
-	function submitForm() {
+	const submitForm = (e) => {
+		e.preventDefault();
 		if (email === "") {
 			alert("Please fill the email field");
 			return;
@@ -13,18 +14,22 @@ const App = function () {
 			.post("http://localhost:5000/users/", {
 				email: email,
 			})
-			.catch((data) => {
-				console.log(data)
-				if (data.errors) {
-          alert(data.errors[0]);
-        } else {
-					alert(data.message[0])
-        }
+			.then(
+				alert("Email has been submitted!")
+				
+			)
+			.catch((err) => {
+				if (err.response) {
+					alert(err.response.data.errors[0])
+				}
+				else {
+					alert("Error processing entry. Please try again.")
+				}
 			});
-	}
+	};
 	return (
     <div>
-			<form onSubmit={submitForm}>
+			<form onSubmit={(e) => submitForm(e)}>
 				<input
 					onChange={(e) => setEmail(e.target.value)}
 					type="email"

@@ -8,7 +8,7 @@ router.post('/', async (req, res) => {
     const { email } = req.body;
     const user = await User.findOne({ email });
     if(user) {
-      return res.status(422).json({ errors: [`${email} has already been registered`]});
+      return res.status(422).json({ errors: [`${email} has already been registered`]})
     }
     // create a new user
     const newUser = await new User({
