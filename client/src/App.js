@@ -14,10 +14,10 @@ const App = function () {
 			.post("http://localhost:5000/users/", {
 				email: email,
 			})
-			.then(
+			.then(() => {
 				alert("Email has been submitted!")
-				
-			)
+				window.location.reload()
+			})
 			.catch((err) => {
 				if (err.response) {
 					alert(err.response.data.errors[0])
