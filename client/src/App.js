@@ -1,45 +1,14 @@
-import React, {useState} from 'react'
-import axios from 'axios';
+import React from 'react'
 import Countdown from './components/countdown/countdown'
+import Email from './components/email/email'
 
 const App = function () {
-	const [email, setEmail] = useState("");
-
-	const submitForm = (e) => {
-		e.preventDefault();
-		if (email === "") {
-			alert("Please fill the email field");
-			return;
-		}
-		axios
-			.post("http://localhost:5000/users/", {
-				email: email,
-			})
-			.then(() => {
-				alert("Email has been submitted!")
-				window.location.reload()
-			})
-			.catch((err) => {
-				if (err.response) {
-					alert(err.response.data.errors[0])
-				}
-				else {
-					alert("Error processing entry. Please try again.")
-				}
-			});
-	};
 	return (
     <div>
-			<Countdown timeTillDate="12 25 2020, 12:00 am" timeFormat="MM DD YYYY, h:mm a" />
-			<form onSubmit={(e) => submitForm(e)}>
-				<input
-					onChange={(e) => setEmail(e.target.value)}
-					type="email"
-					placeholder="Enter your email address"
-				/>
-				<input type="submit" />
-			</form>
-		</div>
+		<Countdown timeTillDate="12 25 2020, 12:00 am" timeFormat="MM DD YYYY, h:mm a" />
+		<br />
+		<Email />
+	</div>
 	);
 };
 export default App
