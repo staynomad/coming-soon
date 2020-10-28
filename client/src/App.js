@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import axios from 'axios';
+import Countdown from './components/countdown/countdown'
 
 const App = function () {
 	const [email, setEmail] = useState("");
@@ -29,6 +30,7 @@ const App = function () {
 	};
 	return (
     <div>
+			<Countdown timeTillDate="12 25 2020, 12:00 am" timeFormat="MM DD YYYY, h:mm a" />
 			<form onSubmit={(e) => submitForm(e)}>
 				<input
 					onChange={(e) => setEmail(e.target.value)}
