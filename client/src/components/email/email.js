@@ -12,7 +12,7 @@ const Email = function () {
 			return;
 		}
 		axios
-			.post("http://localhost:5000/users/", {
+			.post("https://vhomes-coming-soon-backend.herokuapp.com/users", {
 				email: email,
 			})
 			.then(() => {
@@ -20,6 +20,7 @@ const Email = function () {
 				window.location.reload()
 			})
 			.catch((err) => {
+				console.log(err)
 				if (err.response) {
 					alert(err.response.data.errors[0])
 				}
