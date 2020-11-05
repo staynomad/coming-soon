@@ -2,11 +2,9 @@
 
 ## Setup
 - Clone this repository to your local machine
-- Download dependencies and start the server:  
- `cd server`  
- `npm install`  
- `nodemon server.js`   
-- Return to the home/root directory
 - Download dependencies and start the client:  
   `cd client`  
   `npm install`  
+
+## Backend
+Server is currently hosted at https://vhomes-coming-soon-backend.herokuapp.com. Email entry is conducted with https://vhomes-coming-soon-backend.herokuapp.com/users API call.
