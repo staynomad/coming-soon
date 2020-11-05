@@ -1,4 +1,4 @@
-var endDate = new Date().getTime() + 1000800000;
+var endDate = new Date('December 7, 2020 08:30:00')
 
 var x = setInterval(function() {
 
@@ -14,13 +14,13 @@ var x = setInterval(function() {
     document.getElementById("days").innerHTML = daysRemaining;
     document.getElementById("hours").innerHTML = hoursRemaining;
     document.getElementById("minutes").innerHTML = minutesRemaining;
-    document.getElementById("seconds").innerHTML = secondsRemaining; 
+    document.getElementById("seconds").innerHTML = secondsRemaining;
 
-    if (timeRemaining < 0) { 
+    if (timeRemaining < 0) {
         clearInterval(x);
-		document.getElementById("days").innerHTML ='0'; 
-		document.getElementById("hours").innerHTML ='0'; 
-		document.getElementById("minutes").innerHTML ='0' ; 
+		document.getElementById("days").innerHTML ='0';
+		document.getElementById("hours").innerHTML ='0';
+		document.getElementById("minutes").innerHTML ='0' ;
         document.getElementById("seconds").innerHTML = '0';
         alert("Thank you for your patience");
     }
