@@ -16,7 +16,7 @@ window.onload = function() {
                     alert(err.response.data.errors[0])
                 }
                 else {
-                    alert("Error processing entry. Please try again.")
+                    // alert("Error processing entry. Please try again.")
                 }
             });
         }
