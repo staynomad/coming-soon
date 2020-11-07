@@ -1,6 +1,6 @@
 body {
   font-family: "Karla", sans-serif;
-  background-image: url("../images/bg.jpg");
+  background-image: url("../images/bg-edit.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -100,16 +100,18 @@ p {
   color: white;
   background-color: #00b183;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
 }
 
 .booknowbutton:hover {
-  background-color: #00b183;
+  background-color: #00c48f;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 .booknowbutton:active {
+  background-color: #00b183;
   transition: 2ms;
-  transform: translateY(2px);
 }
 
 .inputtextbox {
@@ -117,7 +119,10 @@ p {
   color: #c0bebc !important;
   border-color: #00b183 !important;
   border-width: thin !important;
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
   transition: 0.2s;
+  width: 310px;
 }
 .inputtextbox:hover {
   color: #8a8a8a !important;
@@ -130,4 +135,13 @@ p {
 
 .textContainer {
   margin-top: 10% !important;
+}
+
+.time-card {
+  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.time-label {
+  font-size: 1.4rem !important;
+  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
