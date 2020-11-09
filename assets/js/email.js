@@ -7,7 +7,7 @@ window.onload = function () {
             }
             event.preventDefault();
             const data = { "email": document.getElementById('email').value };
-            fetch('http://localhost:5000/users', {
+            fetch('https://vhomes-coming-soon-backend.herokuapp.com/users', {
                 headers: {
                     'Content-Type': 'application/json'
                 },
