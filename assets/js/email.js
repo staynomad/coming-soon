@@ -7,27 +7,29 @@ window.onload = function () {
             }
             event.preventDefault();
             const data = { "email": document.getElementById('email').value };
-            fetch('https://vhomes-coming-soon-backend.herokuapp.com/users', {
+            fetch('http://localhost:5000/users', {
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 method: 'POST',
                 body: JSON.stringify(data),
             })
-                .then(() => {
-                    console.log(JSON.stringify(data))
-                    alert("Email has been submitted!")
-                    window.location.reload()
-                })
-                .catch((err) => {
-                    console.log(err)
-                    if (err.response) {
-                        alert(err.response.data.errors[0])
-                    }
-                    else {
-                        alert("Error processing entry. Please try again.")
-                    }
-                });
+            .then(async (res) => {
+                let errorMessage = await res.json()
+                if (res.ok) {
+                  alert("Email has been submitted!")
+                  window.location.reload()
+                }
+                else {
+                  alert(errorMessage.errors)
+                  window.location.reload()
+                }
+            })
+            // .catch with fetch only catches request (server) errors
+            .catch((err) => {
+                console.log(err)
+                alert(err.response.data.errors)
+            });
         }
     );
 }
