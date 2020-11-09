@@ -3,7 +3,7 @@ window.onload = function () {
         function (event) {
             if (document.getElementById('email').value == "") {
               alert("Please enter an email.")
-              window.location.reload()
+              return 0
             }
             event.preventDefault();
             const data = { "email": document.getElementById('email').value };
