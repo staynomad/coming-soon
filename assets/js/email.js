@@ -1,8 +1,22 @@
+const spinner = document.getElementById("spinner");
+
+function load() {
+    spinner.className = "show"
+    document.getElementById("button").style.color = "#00b18200";
+}
+
+function stopLoad() {
+    spinner.className = ""
+    document.getElementById("button").style.color = "white";
+}
+
 window.onload = function () {
     document.getElementById("button").addEventListener("click",
         function (event) {
+            load()
             if (document.getElementById('email').value == "") {
-              alert("Please enter an email.")
+            //   alert("Please enter an email.")
+              stopLoad()
               return 0
             }
             event.preventDefault();
@@ -15,6 +29,7 @@ window.onload = function () {
                 body: JSON.stringify(data),
             })
             .then(async (res) => {
+
                 let errorMessage = await res.json()
                 if (res.ok) {
                   alert("Email has been submitted!")
