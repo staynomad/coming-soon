@@ -1,4 +1,4 @@
-var endDate = new Date('December 7, 2020 08:30:00')
+var endDate = new Date('December 3, 2020 08:30:00')
 
 var x = setInterval(function() {
 
